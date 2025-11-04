@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Volaris - Vuelos Baratos</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+    <!-- Header -->
     <header>
         <div class="top-bar">
             <select>
@@ -18,14 +17,20 @@
             <a href="#" style="color: #a81e5e; text-decoration: none;">Regístrate</a>
             <button>Iniciar sesión</button>
         </div>
+        
         <nav>
             <div class="logo">volaris <span>+</span></div>
+            
+            <!-- Botón hamburguesa para móvil -->
+            <button class="menu-toggle" id="menuToggle">☰</button>
+            
             <ul class="nav-links">
                 <li><a href="#" class="active">Vuelos</a></li>
                 <li><a href="#">Vuelo+Hotel</a></li>
                 <li><a href="#">Mi reserva</a></li>
                 <li><a href="#">Estatus de vuelo</a></li>
             </ul>
+            
             <ul class="secondary-nav">
                 <li><a href="#">Guía de viaje</a></li>
                 <li><a href="#">altitude</a></li>
@@ -36,6 +41,20 @@
             </ul>
         </nav>
     </header>
+
+    <!-- Panel lateral para menú secundario (móvil) -->
+    <div class="side-panel" id="sidePanel">
+        <button class="close-panel" id="closePanel">✕</button>
+        <a href="#">Guía de viaje</a>
+        <a href="#">altitude</a>
+        <a href="#">Nuestros destinos</a>
+        <a href="#">Promociones</a>
+        <a href="#">Privacidad</a>
+        <a href="#">Contacto</a>
+    </div>
+
+    <!-- Overlay para cerrar el panel -->
+    <div class="overlay" id="overlay"></div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -48,26 +67,26 @@
             <div class="form-row">
                 <div class="form-group" style="position: relative;">
                     <label>Origen</label>
-                    <input type="text" value="Cd. México (Tod..." placeholder="Ingresa ciudad">
+                    <input type="text" value="Cd. México Todos" placeholder="Ingresa ciudad">
                     <div class="swap-btn">⇄</div>
                 </div>
                 <div class="form-group">
-                    <label>Selecciona un destino</label>
-                    <input type="text" placeholder="- - -">
+                    <label>Destino</label>
+                    <input type="text" value="Acapulco Todos" placeholder="Ingresa ciudad">
                 </div>
             </div>
-
+            
             <div class="form-row">
                 <div class="form-group">
                     <label>Salida</label>
-                    <input type="date" value="2025-11-01">
+                    <input type="date" value="2024-12-08">
                 </div>
                 <div class="form-group">
                     <label>Regreso</label>
-                    <input type="date" value="2025-11-04">
+                    <input type="date" value="2024-12-08">
                 </div>
             </div>
-
+            
             <div class="form-row">
                 <div class="form-group">
                     <label>Pasajeros</label>
@@ -77,31 +96,26 @@
                         <option>3 Adultos</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label>¿Tienes un código de promoción? (Opcional)</label>
-                    <input type="text" placeholder="Ingresa código">
-                </div>
             </div>
-
+            
             <div class="action-buttons">
-                <button class="btn-secondary">Vuelo + Hotel 🏨</button>
-                <button class="btn-primary">Buscar vuelos ✈️</button>
+                <button class="btn-primary">Buscar vuelos</button>
+                <button class="btn-secondary">Agregar hotel</button>
             </div>
         </div>
-
+        
         <div class="promo-banner">
             <div class="promo-content">
-                <div class="buen-fin-badge">🏷️ BUEN FIN DEL BUENO</div>
-                <h2>INVEX Banco</h2>
-                <h3>LOS BENEFICIOS DE LAS<br>TARJETAS<br>VOLARIS INVEX</h3>
-                <p style="font-size: 18px; margin-bottom: 20px;">SON TODOS LOS QUE BUSCAS</p>
-                <button>Adquiérala aquí</button>
-                <p class="disclaimer">Consulta nuestro aviso de privacidad, términos, condiciones,<br>comisiones y requisitos de contratación en www.invextarjetas.com.mx</p>
-            </div>
-            <div class="carousel-dots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
+                <div class="buen-fin-badge">Buen Fin</div>
+                <h2>15% OFF</h2>
+                <h3>Descuento directo en tu tarifa</h3>
+                <button>¡Aprovéchalo!</button>
+                <p class="disclaimer">*Aplican restricciones</p>
+                <div class="carousel-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
             </div>
         </div>
     </section>
@@ -109,85 +123,68 @@
     <!-- Flights Section -->
     <section class="flights-section">
         <div class="section-header">
-            <h2>Mejores vuelos con Volaris</h2>
-            <div class="filters">
-                <select class="filter-dropdown">
-                    <option>De: Cd. México (AICM)</option>
-                </select>
-                <select class="filter-dropdown">
-                    <option>Presupuesto</option>
-                </select>
-                <button class="filter-dropdown" style="color: #a81e5e;">Reiniciar</button>
-                <div style="margin-left: auto;">
-                    <select class="filter-dropdown">
-                        <option>⚙️ Ordenar por: Popularidad</option>
-                    </select>
-                </div>
-            </div>
+            <h2>Vuelos baratos</h2>
+            <p>Encuentra las mejores ofertas</p>
         </div>
-
+        
+        <div class="filters">
+            <select class="filter-dropdown">
+                <option>Temporada navideña</option>
+            </select>
+            <select class="filter-dropdown">
+                <option>Todas las ciudades</option>
+            </select>
+            <select class="filter-dropdown">
+                <option>Todas las fechas</option>
+            </select>
+        </div>
+        
         <div class="flights-grid">
             <div class="flight-card">
-                <img class="flight-image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%2300C8E8' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='white' font-size='24' font-family='Arial'%3ECancún%3C/text%3E%3C/svg%3E" alt="Cancún">
+                <img src="https://via.placeholder.com/400x250/d946a6/ffffff?text=Cancun" class="flight-image" alt="Cancún">
                 <div class="flight-info">
-                    <div class="flight-route">Ciudad de México (MEX) a Cancún (CUN)</div>
-                    <div class="flight-date">27/01/2026</div>
+                    <div class="flight-route">Ciudad de México → Cancún</div>
+                    <div class="flight-date">Del 15 al 22 de diciembre</div>
                     <div class="flight-price">
                         <div>
-                            <div class="price-label">Desde</div>
-                            <div class="price">689 MXN*</div>
+                            <div class="price">$2,499</div>
+                            <div class="price-label">MXN por persona</div>
                         </div>
                     </div>
-                    <div class="flight-details">Visto hace: 2 horas .<br>Sencillo, Clase Económica</div>
-                    <button class="reserve-btn">Reserva ahora</button>
+                    <div class="flight-details">Incluye impuestos y cargos</div>
+                    <button class="reserve-btn">Reservar</button>
                 </div>
             </div>
-
+            
             <div class="flight-card">
-                <img class="flight-image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23FF6B9D' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='white' font-size='24' font-family='Arial'%3ETijuana%3C/text%3E%3C/svg%3E" alt="Tijuana">
+                <img src="https://via.placeholder.com/400x250/a81e5e/ffffff?text=Guadalajara" class="flight-image" alt="Guadalajara">
                 <div class="flight-info">
-                    <div class="flight-route">Ciudad de México (MEX) a Tijuana (TIJ)</div>
-                    <div class="flight-date">24/01/2026</div>
+                    <div class="flight-route">Ciudad de México → Guadalajara</div>
+                    <div class="flight-date">Del 10 al 17 de diciembre</div>
                     <div class="flight-price">
                         <div>
-                            <div class="price-label">Desde</div>
-                            <div class="price">1,029 MXN*</div>
+                            <div class="price">$1,299</div>
+                            <div class="price-label">MXN por persona</div>
                         </div>
                     </div>
-                    <div class="flight-details">Visto hace: 27 minutos .<br>Sencillo, Clase Económica</div>
-                    <button class="reserve-btn">Reserva ahora</button>
+                    <div class="flight-details">Incluye impuestos y cargos</div>
+                    <button class="reserve-btn">Reservar</button>
                 </div>
             </div>
-
+            
             <div class="flight-card">
-                <img class="flight-image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23FFB84D' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='white' font-size='24' font-family='Arial'%3EGuadalajara%3C/text%3E%3C/svg%3E" alt="Guadalajara">
+                <img src="https://via.placeholder.com/400x250/8a1850/ffffff?text=Monterrey" class="flight-image" alt="Monterrey">
                 <div class="flight-info">
-                    <div class="flight-route">Ciudad de México (MEX) a Guadalajara (GDL)</div>
-                    <div class="flight-date">27/01/2026</div>
+                    <div class="flight-route">Ciudad de México → Monterrey</div>
+                    <div class="flight-date">Del 5 al 12 de diciembre</div>
                     <div class="flight-price">
                         <div>
-                            <div class="price-label">Desde</div>
-                            <div class="price">350 MXN*</div>
+                            <div class="price">$1,599</div>
+                            <div class="price-label">MXN por persona</div>
                         </div>
                     </div>
-                    <div class="flight-details">Visto hace: 2 horas .<br>Sencillo, Clase Económica</div>
-                    <button class="reserve-btn">Reserva ahora</button>
-                </div>
-            </div>
-
-            <div class="flight-card">
-                <img class="flight-image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%234ECDC4' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='white' font-size='24' font-family='Arial'%3EMonterrey%3C/text%3E%3C/svg%3E" alt="Monterrey">
-                <div class="flight-info">
-                    <div class="flight-route">Ciudad de México (MEX) a Monterrey (MTY)</div>
-                    <div class="flight-date">16/11/2025</div>
-                    <div class="flight-price">
-                        <div>
-                            <div class="price-label">Desde</div>
-                            <div class="price">201 MXN*</div>
-                        </div>
-                    </div>
-                    <div class="flight-details">Visto hace: 33 minutos .<br>Sencillo, Clase Económica</div>
-                    <button class="reserve-btn">Reserva ahora</button>
+                    <div class="flight-details">Incluye impuestos y cargos</div>
+                    <button class="reserve-btn">Reservar</button>
                 </div>
             </div>
         </div>
@@ -195,107 +192,90 @@
 
     <!-- Payment Methods -->
     <section class="payment-section">
+        <h2>Métodos de pago</h2>
         <div class="payment-grid">
             <div class="payment-group">
-                <h3>Tarjeta de crédito, tarjeta de débito y pago electrónico</h3>
+                <h3>Tarjetas de crédito</h3>
                 <div class="payment-logos">
-                    <div class="payment-logo" style="font-weight: bold; color: #1A1F71;">VISA</div>
-                    <div class="payment-logo" style="font-weight: bold; color: #EB001B;">●●<span style="color: #FF5F00;">●</span></div>
-                    <div class="payment-logo" style="font-weight: bold; color: #006FCF;">AMEX</div>
-                    <div class="payment-logo" style="font-weight: bold; color: #003087;">PayPal</div>
-                    <div class="payment-logo" style="font-weight: bold; color: #a81e5e;">invex Banco</div>
+                    <div class="payment-logo">💳 Visa</div>
+                    <div class="payment-logo">💳 Mastercard</div>
+                    <div class="payment-logo">💳 Amex</div>
                 </div>
             </div>
             <div class="payment-group">
-                <h3>Efectivo en cualquiera de las sucursales participantes</h3>
+                <h3>Tarjetas de débito</h3>
                 <div class="payment-logos">
-                    <div class="payment-logo" style="font-weight: bold; color: #ED1C27;">OXXO</div>
-                    <div class="payment-logo" style="font-weight: bold; color: #008C3A;">7-Eleven</div>
-                    <div class="payment-logo" style="font-weight: bold; color: #0071CE;">Walmart</div>
-                    <div class="payment-logo" style="font-weight: bold; color: #E30613;">Farmacia del Ahorro</div>
+                    <div class="payment-logo">💳 Visa</div>
+                    <div class="payment-logo">💳 Mastercard</div>
                 </div>
             </div>
-        </div>
-        <div style="text-align: center; margin-top: 20px;">
-            <a href="#" style="color: #a81e5e; text-decoration: none; font-weight: 600;">Ver más información</a>
+            <div class="payment-group">
+                <h3>Otros métodos</h3>
+                <div class="payment-logos">
+                    <div class="payment-logo">PayPal</div>
+                    <div class="payment-logo">OXXO</div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Programs Section -->
     <section class="programs-section">
+        <h2>Programas especiales</h2>
         <div class="programs-grid">
             <div class="program-card">
                 <div class="program-icon">✈️</div>
-                <h3>altitude</h3>
+                <h3>v.club</h3>
                 <p>Ahora puedes acumular puntos por todas tus compras. ¡Vuela y llega más alto!</p>
-                <button>Inscríbete ahora</button>
+                <button>Más información</button>
             </div>
-
-            <div class="program-card">
-                <div class="program-icon">📅</div>
-                <h3>Pase Anual</h3>
-                <p>Vuela todo lo que puedas por un año.</p>
-                <button>Inscríbete ahora</button>
-            </div>
-
+            
             <div class="program-card">
                 <div class="program-icon">🎫</div>
                 <h3>v.pass</h3>
-                <p>Un viaje te espera cada mes. v.pass, tu suscripción de vuelos.</p>
-                <button>Suscríbete ahora</button>
+                <p>Vuela todo lo que puedas por un año. Un viaje te espera cada mes.</p>
+                <button>Más información</button>
             </div>
-
+            
             <div class="program-card">
-                <div class="program-icon">💳</div>
-                <h3>INVEX</h3>
-                <p>Acumula pesos para comprar tus vuelos, ¡no millas ni puntos! Además, obtén equipaje gratis y meses sin intereses.</p>
-                <button>Solicita tu tarjeta</button>
+                <div class="program-icon">💰</div>
+                <h3>invierte</h3>
+                <p>Acumula pesos para comprar tus vuelos, ¡no millas ni puntos!</p>
+                <button>Más información</button>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
     <section class="services-section">
+        <h2>Servicios adicionales</h2>
         <div class="services-grid">
             <div class="service-card">
-                <div class="service-icon">✈️🏨</div>
-                <h3>Vuelo + Hotel</h3>
-                <p>Encuentra las mejores ofertas para tu viaje.</p>
+                <div class="service-icon">🏢</div>
+                <h3>Volaris Empresas</h3>
+                <p>Membresía con beneficios para viajes de negocios</p>
             </div>
-
-            <div class="service-card">
-                <div class="service-icon">💼</div>
-                <h3>v.business</h3>
-                <p>La membresía con beneficios especiales para tus viajes de negocios.</p>
-            </div>
-
+            
             <div class="service-card">
                 <div class="service-icon">👥</div>
                 <h3>Grupos</h3>
-                <p>Obtén una cotización para grupos de más de 9 personas.</p>
+                <p>Cotización para grupos de más de 9 personas</p>
             </div>
-
-            <div class="service-card">
-                <div class="service-icon">🎯</div>
-                <h3>Beneficios AIFA</h3>
-                <p>Obtén un precio preferencial en las casetas de la autopista al viajar desde o hacia el aeropuerto Felipe Ángeles.</p>
-            </div>
-
+            
             <div class="service-card">
                 <div class="service-icon">📦</div>
                 <h3>Carga</h3>
-                <p>Contamos con servicio de carga y mensajería.</p>
+                <p>Servicio de carga y mensajería</p>
             </div>
         </div>
     </section>
 
     <!-- Newsletter -->
     <section class="newsletter">
-        <h2>Sé el primero en enterarte de nuestras</h2>
-        <h2 style="font-size: 48px; margin-top: 10px;">Promociones</h2>
+        <h2>Suscríbete y recibe las mejores ofertas</h2>
         <form class="newsletter-form">
-            <input type="email" placeholder="Correo Electrónico">
-            <button type="submit">¡Suscribirme!</button>
+            <input type="email" placeholder="Tu correo electrónico">
+            <button type="submit">Suscribirse</button>
         </form>
     </section>
 
@@ -303,70 +283,85 @@
     <footer>
         <div class="footer-grid">
             <div class="footer-column">
-                <h4>Nuestras rutas</h4>
-                <ul>
-                    <li><a href="#">Vuelos a Aguascalientes</a></li>
-                    <li><a href="#">Vuelos a Cancún</a></li>
-                    <li><a href="#">Vuelos a Guatemala</a></li>
-                    <li><a href="#">Vuelos a Culiacán</a></li>
-                    <li><a href="#">Vuelos a Guadalajara</a></li>
-                    <li><a href="#">Vuelos a León</a></li>
-                    <li><a href="#">Vuelos a Ciudad de México</a></li>
-                    <li><a href="#">Vuelos a Morelia</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-column">
-                <h4>Información para tu viaje y derechos de los pasajeros</h4>
-                <ul>
-                    <li><a href="#">FlexiTicket</a></li>
-                    <li><a href="#">Tarjetas Volaris INVEX</a></li>
-                    <li><a href="#">Derechos que tienes al viajar con Volaris</a></li>
-                    <li><a href="#">Equipaje</a></li>
-                    <li><a href="#">Pase de abordar</a></li>
-                    <li><a href="#">Cambio de vuelo</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-column">
                 <h4>Sobre Volaris</h4>
                 <ul>
-                    <li><a href="#">Somos la aerolínea de ultra-bajo costo con vuelos en México, Estados Unidos, Centroamérica y Sudamérica.</a></li>
+                    <li><a href="#">Acerca de nosotros</a></li>
+                    <li><a href="#">Sala de prensa</a></li>
                     <li><a href="#">Trabaja con nosotros</a></li>
                     <li><a href="#">Relación con inversionistas</a></li>
-                    <li><a href="#">Sostenibilidad corporativa</a></li>
-                    <li><a href="#">Sala de prensa</a></li>
-                    <li><a href="#">Blog Volaris</a></li>
-                    <li><a href="#">Revista V de Volaris</a></li>
                 </ul>
             </div>
-
+            
             <div class="footer-column">
-                <h4>Descarga nuestra aplicación</h4>
+                <h4>Ayuda</h4>
+                <ul>
+                    <li><a href="#">Centro de ayuda</a></li>
+                    <li><a href="#">Contáctanos</a></li>
+                    <li><a href="#">Términos y condiciones</a></li>
+                    <li><a href="#">Aviso de privacidad</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Descarga la app</h4>
                 <div class="app-download">
-                    <img class="app-btn" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='50'%3E%3Crect fill='black' width='150' height='50' rx='5'/%3E%3Ctext x='75' y='30' text-anchor='middle' fill='white' font-size='12' font-family='Arial'%3EGoogle Play%3C/text%3E%3C/svg%3E" alt="Google Play">
-                    <img class="app-btn" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='50'%3E%3Crect fill='black' width='150' height='50' rx='5'/%3E%3Ctext x='75' y='30' text-anchor='middle' fill='white' font-size='12' font-family='Arial'%3EApp Store%3C/text%3E%3C/svg%3E" alt="App Store">
+                    <img src="https://via.placeholder.com/150x50/333/ffffff?text=App+Store" alt="App Store" class="app-btn">
+                    <img src="https://via.placeholder.com/150x50/333/ffffff?text=Google+Play" alt="Google Play" class="app-btn">
                 </div>
-                
-                <h4 style="margin-top: 30px;">Síguenos</h4>
                 <div class="social-links">
                     <a href="#" class="social-icon">f</a>
-                    <a href="#" class="social-icon">𝕏</a>
-                    <a href="#" class="social-icon">📷</a>
-                    <a href="#" class="social-icon">🎵</a>
-                    <a href="#" class="social-icon">in</a>
-                    <a href="#" class="social-icon">💬</a>
+                    <a href="#" class="social-icon">t</a>
+                    <a href="#" class="social-icon">i</a>
                 </div>
             </div>
         </div>
-
+        
         <div class="footer-bottom">
-            <p>&copy; 2025 Volaris. Todos los derechos reservados.</p>
-            <p style="margin-top: 10px;">Somos la aerolínea de ultra-bajo costo con vuelos en México, Estados Unidos, Centroamérica y Sudamérica.</p>
+            <p>&copy; 2024 Volaris. Todos los derechos reservados.</p>
         </div>
     </footer>
 
+    <!-- Menú inferior fijo (solo móvil) -->
+    <nav class="bottom-nav">
+        <a href="#">
+            <span>✈️</span>
+            <div>Vuelos</div>
+        </a>
+        <a href="#">
+            <span>🏨</span>
+            <div>Vuelo+Hotel</div>
+        </a>
+        <a href="#">
+            <span>📄</span>
+            <div>Mi reserva</div>
+        </a>
+        <a href="#">
+            <span>⏲️</span>
+            <div>Estatus</div>
+        </a>
+    </nav>
+
+    <script>
+        // JavaScript para panel lateral
+        const menuToggle = document.getElementById('menuToggle');
+        const sidePanel = document.getElementById('sidePanel');
+        const closePanel = document.getElementById('closePanel');
+        const overlay = document.getElementById('overlay');
+
+        menuToggle.addEventListener('click', () => {
+            sidePanel.classList.add('active');
+            overlay.classList.add('active');
+        });
+
+        closePanel.addEventListener('click', () => {
+            sidePanel.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+
+        overlay.addEventListener('click', () => {
+            sidePanel.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+    </script>
 </body>
-
-
 </html>
