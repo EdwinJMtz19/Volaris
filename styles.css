@@ -795,6 +795,21 @@ footer {
     font-size: 14px;
 }
 
+
+.programas-especiales-img{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.promo-content img{
+    width: 900px;
+    height: auto;
+    margin-top: 20px;
+}
+
 /* ============================================ */
 /* RESPONSIVE: MÓVIL */
 /* ============================================ */
