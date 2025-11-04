@@ -228,6 +228,7 @@ nav {
     display: flex;
     gap: 15px;
     margin-bottom: 20px;
+    align-items: center;
 }
 
 .form-group {
@@ -259,19 +260,26 @@ nav {
 }
 
 .swap-btn {
-    position: absolute;
-    right: -20px;
-    top: 50%;
-    background: white;
-    border: 2px solid #ddd;
-    border-radius: 50%;
-    width: 40px;
+    background: #f0f0f0; 
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    width: 40px; 
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     z-index: 10;
+    color: #666; 
+    font-size: 20px; 
+    margin: 0 10px; 
+}
+
+/* Modificación para móvil para que esté en línea con los campos */
+@media (max-width: 768px) {
+    .swap-btn {
+        
+    }
 }
 
 .action-buttons {
